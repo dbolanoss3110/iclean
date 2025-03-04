@@ -11,7 +11,7 @@ function validateLogin(event) {
             icon: "success",
             showConfirmButton: true
         }).then(() => {
-            window.location.href = "../landing.html"; 
+            window.location.href = "landing.html"; 
         });
     } else {
         Swal.fire({
