@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 3.2rem; /* 32px */
+}
+
+h2 {
+  font-size: 2.4rem; /* 24px */
+}
+
+p {
+  font-size: 1.6rem; /* 16px */
+}
+
+.small-text {
+  font-size: 1.2rem; /* 12px */
+}
+
+.border-primary{
+  border-color: rgba(255, 255, 255, 0.20) !important ;
+}
+
+body.swal2-height-auto {
+  height: 100% !important;
+}
+
+.margin-section{
+  margin-bottom: 6rem;
+}
+
+.hero-background {
+  background: 
+  linear-gradient(rgba(9, 8, 56, 0.74), rgba(9, 8, 56, 0.74)), 
+  url('../img/bg.png') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  
+}
+#hello-page .overlay-panel {
+  background: linear-gradient(180deg, #5034DE 0%, rgba(28, 25, 109, 0.00) 100%);
+  color: #fff;
+}
+
+#hello-page .btn-custom {
+  background-color: #52D1F1;
+  border: none;
+  color: #1C196D;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 80px;
+}
+#hello-page .btn-custom:hover{
+  background-color: #5034DE;
+  color: #fff;
+}
+
+#hello-page .logo {
+  max-width: 300px;
+}
+
+/* login-page */
+#login-page {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-container {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.login-form {
+  background: linear-gradient(180deg, #5034DE 0%, #1C196D 100%);
+  color: white;
+  padding: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.login-form .form-control {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 80px;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.login-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.login-form a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.login-form a:hover {
+  color: white;
+}
+.login-form .btn-primary {
+  background-color: #52D1F1;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  border-radius: 80px;
+  color: #1C196D;
+  font-weight: 500;
+}
+.login-form .btn-primary:hover {
+  background-color: #5034DE;
+  color: white;
+}
+.login-image {
+  flex: 1;
+  background: url('../img/ingresar.png') center/cover no-repeat;
+}
+
+/* home-page */
+.navbar-brand img {
+  max-width: 160px;
+}
+.nav-item {
+  margin-right: 10px;
+  
+}
+.nav-link{
+  color: #1C196D;
+  font-weight: 600;
+}
+.nav-link:hover{
+  color:#52D1F1;
+}
+
+#home-page .hero {
+  background: linear-gradient(89deg, #1C196D 1.14%, rgba(28, 25, 109, 0.00) 99.63%), url('../img/bg.png') center/cover no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 50px;
+  min-height: 500px;
+}
+#home-page .btn-transparent{
+ background: transparent;
+ border-radius: 80px;
+ color: #fff;
+ border-color: #fff;
+ font-weight: 500;
+ font-size: 1.2rem;
+ padding: 10px 40px;;
+}
+#home-page .btn-transparent:hover{
+  background: #52D1F1;
+  border-color: #52D1F1;
+}
+#home-page .btn-custom {
+  background: #52D1F1;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  font-weight: 500 ;
+  border-radius: 80px;
+}
+#home-page .btn-custom:hover{
+  background-color: #5034DE;
+}
+
+#home-page .btn-custom2 {
+  background-color: #5034DE;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  font-weight: 500 ;
+  border-radius: 80px;
+  color: #fff;
+}
+#home-page .btn-custom2:hover{
+  background-color: #52D1F1;
+}
+#home-page .services{
+  background: linear-gradient(180deg, #F3F1FC 0%, #FFF 100%);
+}
+
+#home-page .services h2 {
+  color: #1C196D;
+}
+#home-page .services p {
+  color: #5034DE;
+}
+#home-page .service-box {
+  text-align: center;
+  padding: 3rem;
+  /* border: 1px solid #ddd; */
+  border-radius: 10px;
+  background: white;
+  transition: 0.3s;
+}
+#home-page .service-box img {
+  max-width: 150px;
+}
+#home-page .service-box h5 {
+  font-size: 2.1rem;
+  color: #1C196D;
+}
+#home-page .service-box p {
+  color: #30375C;
+}
+#homer .service-box .border {
+  border-color:rgba(28, 25, 109, 0.28) ;
+ 
+}
+#home-page .service-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#home-page .plans .plan-box {
+  text-align: center;
+  border: 1px solid #5034DE;
+  padding: 5rem 3rem;
+  border-radius: 10px;
+  background: white;
+  transition: 0.3s;
+}
+#home-page .plans h2 {
+  color: #1C196D;
+}
+#home-page .plans p {
+  color: #5034DE;
+}
+#home-page .plans .plan-box p {
+  text-align: justify;
+  color: #30375C;
+}
+#home-page .plans .plan-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+}
+#home-page .plans .plan-box .header  img {
+  max-width: 75px;
+}
+#home-page .plans .plan-box .header .text {
+  text-align: justify;
+}
+#home-page .plans .plan-box .header .text h5 {
+  font-size: 2.1rem;
+  color: #1C196D;
+  font-weight: 700;
+}
+#home-page .plans .plan-box .header .text span{
+  color: #52D1F1;
+}
+
+#home-page .experience .header{
+  border-radius: 24px;
+  background: linear-gradient(89deg, rgba(82, 209, 241, 0.15) 1.14%, rgba(82, 209, 241, 0.00) 99.63%);
+}
+
+#home-page .experience .header h2 {
+  color: #1C196D;
+  text-transform: uppercase;
+}
+
+#home-page .experience .header p {
+  color: #52D1F1;
+  text-transform: uppercase;
+ 
+}
+
+#home-page .experience .body {
+  color: #30375C ;
+}
+
+.footer {
+  background: linear-gradient(89deg, rgba(82, 209, 241, 0.15) 1.14%, rgba(82, 209, 241, 0.00) 99.63%);
+  padding: 2rem;
+  text-align: center;
+}
+.footer img{
+  max-width: 150px;
+}
+
+
+@media (max-width: 768px) {
+  .login-form {
+    flex: 2;
+  }
+}
