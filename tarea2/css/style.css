@@ -177,7 +177,7 @@ body.swal2-height-auto {
   border: none;
   padding: 10px 40px;
   font-size: 1.2rem;
-  font-weight: 500 ;
+  font-weight: 700 ;
   border-radius: 80px;
 }
 #home-page .btn-custom:hover{
@@ -189,7 +189,7 @@ body.swal2-height-auto {
   border: none;
   padding: 10px 40px;
   font-size: 1.2rem;
-  font-weight: 500 ;
+  font-weight: 700 ;
   border-radius: 80px;
   color: #fff;
 }
@@ -309,6 +309,7 @@ body.swal2-height-auto {
   font-size: 1.2rem;
   font-weight: 500 ;
   border-radius: 80px;
+  font-weight: 700;
 }
 #landing-page .btn-custom:hover{
   background-color: #5034DE;
