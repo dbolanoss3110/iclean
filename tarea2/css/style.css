@@ -297,6 +297,23 @@ body.swal2-height-auto {
   max-width: 150px;
 }
 
+#landing-page {
+  background:linear-gradient(180deg, #5034DE 0%, #1C196D 100%) ;
+}
+
+
+#landing-page .btn-custom {
+  background: #52D1F1;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  font-weight: 500 ;
+  border-radius: 80px;
+}
+#landing-page .btn-custom:hover{
+  background-color: #5034DE;
+  color: #fff;
+}
 
 @media (max-width: 768px) {
   .login-form {
