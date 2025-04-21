@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iClean</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <nav class=" sticky-top navbar navbar-expand-lg  align-items-center  pb-5 mt-4">
+    <div class="container">
+      <div class="navbar-brand ">
+        <a href="./inicio.html">
+          <img src="./img/logo.png" alt="Logo">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./inicio.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="inicio.htm#services">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="inicio.html#planes">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="./encuesta-servicio.html">Denos su opinión</a></li>
+          <li class="nav-item"><a class="nav-link btn-coodinar" href="./shopping-cart.html">Coordinar Servicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link p-0 " href="#" id="plusDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-list"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="plusDropdown">
+              <li><a class="dropdown-item" href="#opcion1">Opción 1</a></li>
+              <li><a class="dropdown-item" href="#opcion2">Opción 2</a></li>
+              <li><a class="dropdown-item" href="#opcion3">Opción 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="shopping-cart">
+    <div class="container my-5">
+      <div class="p-5 mb-4  bg-title text-center rounded-5">
+        <h2 class="fw-bold">COORDINAR SERVICIO</h2>
+      </div>
+      <form id="serviceForm">
+        <div class="row">
+          <!-- User Data -->
+          <div class="col-md-6">
+            <h5>Ingrese sus datos</h5>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Nombre</label>
+              <input type="text" id="fullName" name="fullName" class="form-control"
+                placeholder="Ingrese su nombre completo" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Teléfono</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="8888 7777" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Correo electrónico" />
+            </div>
+          </div>
+          <!-- Payment Data -->
+          <div class="col-md-6">
+            <h5>Datos de compra</h5>
+            <div class="mb-3">
+              <label for="cardName" class="form-label">Nombre de la tarjeta</label>
+              <input type="text" id="cardName" name="cardName" class="form-control"
+                placeholder="Ingrese el nombre del titular" />
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Número de tarjeta</label>
+              <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="Ingrese el número"
+                maxlength="16" />
+            </div>
+            <div class="row">
+              <div class="mb-3 col-6">
+                <label for="expDate" class="form-label">Fecha de vencimiento</label>
+                <input type="month" id="expDate" name="expDate" class="form-control" />
+              </div>
+              <div class="mb-3 col-6">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" id="cvv" name="cvv" class="form-control" placeholder="Código" maxlength="4" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Plan Selection -->
+        <div class="mt-4">
+          <h5>Seleccione el plan</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="plan" id="planBasico" value="Plan Básico" />
+            <label class="form-check-label fw-bold" for="planBasico">Plan Básico</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="plan" id="planEstandar" value="Plan Estándar" />
+            <label class="form-check-label fw-bold" for="planEstandar">Plan Estándar</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="plan" id="planPremium" value="Plan Premium" />
+            <label class="form-check-label fw-bold" for="planPremium">Plan Premium</label>
+          </div>
+        </div>
+        <!-- Service Details -->
+        <div class="mt-4 row">
+          <div class="col-md-6">
+            <h5>Ingrese los datos de servicio</h5>
+            <div class="mb-3">
+              <label for="serviceDate" class="form-label">Fecha</label>
+              <input type="date" id="serviceDate" name="serviceDate" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>&nbsp;</h5>
+            <div class="mb-3">
+              <label class="form-label d-block">Hora</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="serviceTime" id="time1" value="09:00" />
+                <label class="form-check-label" for="time1">09:00</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="serviceTime" id="time2" value="12:00" />
+                <label class="form-check-label" for="time2">12:00</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="serviceTime" id="time3" value="15:00" />
+                <label class="form-check-label" for="time3">15:00</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="button" id="openModalBtn" class="btn btn-primary px-5">
+            Agendar servicio
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="confirmBody">
+            <!-- Confirmation details injected here -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" id="confirmSubmitBtn" class="btn btn-primary">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="footer d-flex justify-content-between py-5 align-content-center container rounded-5">
+    <div class="d-flex"><img src="./img/logo.png" alt="Logo"></div>
+    <div class="d-flex align-items-center">
+      <p>Copyright © 2023 iClean. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/shoppinh-cart.js"></script>
+</body>
+
+</html>

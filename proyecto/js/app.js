@@ -33,3 +33,4 @@ const observer = new MutationObserver(() => {
 });
 
 observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
