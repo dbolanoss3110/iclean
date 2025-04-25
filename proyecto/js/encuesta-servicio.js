@@ -17,7 +17,6 @@ function getMissingFields() {
     .filter((f) => !document.getElementById(f.id).value.trim())
     .map((f) => f.name);
 
-  // Check each rating group
   if (!document.querySelector('input[name="limpieza"]:checked'))
     missing.push("Calificación limpieza");
   if (!document.querySelector('input[name="trato"]:checked')) missing.push("Calificación trato");
@@ -69,6 +68,7 @@ function sendEmail(params) {
 document.getElementById("surveyForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
+
   const missing = getMissingFields();
   if (missing.length) {
     const list = missing.map((m) => `<li>${m}</li>`).join("");
@@ -76,12 +76,14 @@ document.getElementById("surveyForm").addEventListener("submit", function (e) {
     return;
   }
 
+
   const email = document.getElementById("email").value.trim();
   if (!isEmailValid(email)) {
     showError("Correo inválido", "Ingrese un correo válido.");
     return;
   }
 
+ 
   const templateParams = collectParams();
   showConfirmation(templateParams);
 });
@@ -91,7 +93,7 @@ document.getElementById("confirmSend").addEventListener("click", async () => {
   const params = collectParams();
   try {
     const res = await sendEmail(params);
-
+    // success message
     Swal.fire({
       icon: "success",
       title: "¡Gracias!",
