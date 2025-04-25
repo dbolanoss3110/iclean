@@ -21,6 +21,9 @@ h1 {
 h2 {
   font-size: 2.4rem; /* 24px */
 }
+ h5{
+  font-size: 1.8rem;
+ }
 
 p {
   font-size: 1.6rem; /* 16px */
@@ -506,6 +509,235 @@ textarea.form-control {
   border-bottom: 3px solid #5034DE;
   font-weight: bold;
 }
+
+#proveedores .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#proveedores .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+#proveedores .swiper-slide img {
+  display: block;
+  /* width: 100%;
+  height: 100%; */
+  object-fit: cover;
+}
+
+#proveedores .card-img, .card-img-bottom, .card-img-top{
+  max-width: 200px;
+}
+
+#proveedores .card {
+  background: linear-gradient(180deg, #F3F1FC 0%, #FFF 100%);
+  color: #1C196D;
+  border: none;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#proveedores .card .btn-primary {
+  padding: 5px 40px;
+}
+
+#basic-addon1 {
+  padding: 1rem 2rem;
+}
+
+#convenios {
+	/* Create four equal columns that floats next to eachother */
+	/* The Modal (background) */
+	/* Modal Content */
+	/* The Close Button */
+	/* Hide the slides by default */
+	/* Next & previous buttons */
+	/* Position the "next button" to the right */
+	/* On hover, add a black background color with a little bit see-through */
+	/* Number text (1/3 etc) */
+	/* Caption text */
+}
+ #convenios .row > .column {
+	 padding: 0 8px;
+}
+ #convenios .row:after {
+	 content: "";
+	 display: table;
+	 clear: both;
+}
+ #convenios .column {
+	 float: left;
+	 width: 25%;
+}
+#convenios .column img {
+   margin-top: 8px;
+   vertical-align: middle;
+   width: 100%;
+   height: 100%;
+  }
+ #convenios .modal2 {
+	 display: none;
+	 position: fixed;
+	 z-index: 10000;
+	 padding-top: 100px;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 overflow: auto;
+	 background-color: #000000a1;
+}
+ #convenios .modal-content2 {
+	 position: relative;
+	 background-color: transparent;
+	 margin: auto;
+	 padding: 0;
+	 width: 90%;
+	 max-width: 1200px;
+}
+ #convenios .close {
+	 color: white;
+	 position: absolute;
+	 top: 10px;
+	 right: 25px;
+	 font-size: 35px;
+	 font-weight: bold;
+}
+ #convenios .close:hover, #convenios .close:focus {
+	 color: #999;
+	 text-decoration: none;
+	 cursor: pointer;
+}
+ #convenios .mySlides {
+	 display: none;
+}
+ #convenios .prev, #convenios .next {
+	 cursor: pointer;
+	 position: absolute;
+	 top: 50%;
+	 width: auto;
+	 padding: 16px;
+	 margin-top: -50px;
+	 color: white;
+	 font-weight: bold;
+	 font-size: 20px;
+	 transition: 0.6s ease;
+	 border-radius: 0 3px 3px 0;
+	 user-select: none;
+	 -webkit-user-select: none;
+}
+ #convenios .next {
+	 right: 0;
+	 border-radius: 3px 0 0 3px;
+}
+ #convenios .prev:hover, #convenios .next:hover {
+	 background-color: rgba(0, 0, 0, 0.8);
+}
+ #convenios .numbertext {
+	 color: #f2f2f2;
+	 font-size: 12px;
+	 padding: 8px 12px;
+	 position: absolute;
+	 top: 0;
+}
+ #convenios .caption-container {
+  text-align: center;
+  background: linear-gradient(180deg, #F3F1FC 0%, #FFF 100%);
+  color: #1C196D;
+  padding: 2px 16px;
+  font-weight: 700;
+	
+}
+ #convenios img.demo {
+	 opacity: 0.6;
+}
+ #convenios .active, #convenios .demo:hover {
+	 opacity: 1;
+}
+ #convenios img.hover-shadow {
+	 transition: 0.3s;
+}
+ #convenios .hover-shadow:hover {
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#convenios .card{
+ border: 1px solid #D5D5E4;
+ background-color: #F6F6F9;
+  color: #1C196D;
+  /* border: none; */
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#reglamento  h5{
+  margin-top: 20px;
+}
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  background: linear-gradient(180deg, #5034DE 0%, #1C196D 100%) !important;
+  border-radius: 20px !important;
+  color: #fff  !important ;
+}
+
+div:where(.swal2-container) div:where(.swal2-popup) p {
+  margin-top: 15px  !important;
+  font-size: 1.4rem  !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+  background-color:#52D1F1  !important;
+  padding: 10px 40px  !important;
+  border-radius: 10px  !important;
+  color: #1C196D  !important;
+  font-size: 1.4rem  !important;
+}
+
+.btn-secondary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 80px;
+}
+
+.form-select {
+  color: #1C196D;
+  background-color: #F6F6F9;
+  border: 1px solid #D5D5E4;
+  font-size: 1.4rem;
+  border-radius: 80px;
+  padding: 10px 10px;
+}
+
+.modal-content {
+  background: linear-gradient(180deg, #F3F1FC 0%, #FFF 100%);
+  border-radius: 20px;
+  padding: 3rem;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-header .close {
+  font-size: 2rem;
+}
+.modal-header .close:hover {
+  color: #52D1F1;
+}
+
+.modal-footer{
+  border-top: none;
+}
+
+
 @media (max-width: 768px) {
   .login-form {
     flex: 2;
