@@ -1,10 +1,9 @@
 
-// Open the Modal
+
 function openModal() {
     document.getElementById("myModal").style.display = "block";
 }
 
-// Close the Modal
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
 }
@@ -12,12 +11,12 @@ function closeModal() {
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
@@ -60,16 +59,16 @@ const condominios = [
     { name: "Francosta", discountCode: "FRANCOSTA2023", discountPercentage: 9 }
 ];
 
-// Cargar el dropdown con los nombres de los condominios
+
 condominios.forEach(condo => {
     const li = document.createElement('li');
     li.classList.add('dropdown-item');
     li.textContent = condo.name;
-    li.setAttribute('data-condo', JSON.stringify(condo));  // Guardar los datos del condominio en un atributo data
+    li.setAttribute('data-condo', JSON.stringify(condo));  
     condoList.appendChild(li);
 });
 
-// Mostrar el card con los detalles del condominio cuando se hace clic
+
 const condoDetailsCard = document.getElementById('condoDetailsCard');
 const condoName = document.getElementById('condoName');
 const condoDiscountCode = document.getElementById('condoDiscountCode');
@@ -78,17 +77,11 @@ const provinceButton = document.getElementById('dropdownMenuButton');
 
 condoList.addEventListener('click', function (event) {
     if (event.target.classList.contains('dropdown-item')) {
-        const selectedCondo = JSON.parse(event.target.getAttribute('data-condo')); // Obtener los datos del condominio
-
-        // Actualizar el contenido del card
+        const selectedCondo = JSON.parse(event.target.getAttribute('data-condo')); 
         condoName.textContent = selectedCondo.name;
         condoDiscountCode.textContent = `Código de descuento: ${selectedCondo.discountCode}`;
         condoDiscountPercentage.textContent = `Descuento: ${selectedCondo.discountPercentage}%`;
-
-        // Actualizar el texto del botón con el nombre del condominio seleccionado
         provinceButton.textContent = selectedCondo.name;
-
-        // Mostrar el card
         condoDetailsCard.style.display = 'block';
     }
 });

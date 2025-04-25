@@ -1,12 +1,12 @@
-// Initialize EmailJS with your user ID
+
 emailjs.init("HKiIThGpeT7T6eLPK");
 
-// Shows an error SweetAlert
+
 function showError(title, html) {
   Swal.fire({ icon: "error", title, html });
 }
 
-// Returns a list of missing fields
+
 function getMissingFields() {
   const fields = [
     { id: "fullName", name: "Nombre" },
@@ -27,12 +27,12 @@ function getMissingFields() {
   return missing;
 }
 
-// Basic email format validation
+
 function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Collects all form values into an object
+
 function collectParams() {
   return {
     fullName: document.getElementById("fullName").value.trim(),
@@ -45,7 +45,7 @@ function collectParams() {
   };
 }
 
-// Populates and shows the confirmation modal
+
 function showConfirmation(params) {
   document.getElementById("confirmBody").innerHTML = `
     <p><strong>Nombre:</strong> ${params.fullName}</p>
@@ -59,17 +59,16 @@ function showConfirmation(params) {
   new bootstrap.Modal(document.getElementById("confirmModal")).show();
 }
 
-// Sends the email via EmailJS
+
 function sendEmail(params) {
-  // replace with your own service/template IDs if son distintos
+  
   return emailjs.send('service_blppxsc', 'template_02ckosv', params, 'HKiIThGpeT7T6eLPK');
 }
 
-// Main handler for form submit
+
 document.getElementById("surveyForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // 1) Check missing fields
   const missing = getMissingFields();
   if (missing.length) {
     const list = missing.map((m) => `<li>${m}</li>`).join("");
@@ -77,24 +76,22 @@ document.getElementById("surveyForm").addEventListener("submit", function (e) {
     return;
   }
 
-  // 2) Validate email
   const email = document.getElementById("email").value.trim();
   if (!isEmailValid(email)) {
     showError("Correo inválido", "Ingrese un correo válido.");
     return;
   }
 
-  // 3) Collect params and show confirmation
   const templateParams = collectParams();
   showConfirmation(templateParams);
 });
 
-// Handler para el botón de confirmar y enviar
+
 document.getElementById("confirmSend").addEventListener("click", async () => {
   const params = collectParams();
   try {
     const res = await sendEmail(params);
-    // success message
+
     Swal.fire({
       icon: "success",
       title: "¡Gracias!",

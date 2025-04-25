@@ -1,7 +1,7 @@
-// Initialize EmailJS SDK
+
 emailjs.init("HKiIThGpeT7T6eLPK");
 
-// Arreglo de condominios con sus códigos de descuento y porcentajes
+
 const condominios = [
     { name: "Condominio Caoba Ciudad Colón", discountCode: "CAOBA2023", discountPercentage: 10 },
     { name: "Condominio Caminos del Bosque", discountCode: "CAMINOS60", discountPercentage: 15 },
@@ -20,7 +20,7 @@ const condominios = [
     { name: "Francosta", discountCode: "FRANCOSTA2023", discountPercentage: 9 }
 ];
 
-// Arreglo de planes con precios
+
 const plans = [
   { name: "Plan Básico", price: 50 },
   { name: "Plan Estándar", price: 100 },
@@ -30,44 +30,44 @@ const plans = [
 
 function updatePrice() {
   const selectedPlan = document.querySelector('input[name="plan"]:checked');
-  const priceElement = document.getElementById("planPrice"); // Elemento donde se muestra el precio
-  const discountCode = document.getElementById("discountCode").value; // Obtener el código de descuento
+  const priceElement = document.getElementById("planPrice"); 
+  const discountCode = document.getElementById("discountCode").value; 
 
   if (selectedPlan) {
     const plan = plans.find(p => p.name === selectedPlan.value);
     let price = plan.price;
 
-    // Aplicar descuento si el código es válido
+   
     price = getDiscountedPrice(price, discountCode);
 
-    // Mostrar el precio actualizado
+ 
     priceElement.textContent = `Precio: $${price.toFixed(2)}`;
   }
 }
 
-// Llamar a updatePrice cuando el usuario elige un plan o ingresa un código de descuento
+
 document.querySelectorAll('input[name="plan"]').forEach(input => {
-  input.addEventListener("change", updatePrice);  // Actualiza el precio cuando se seleccione un plan
+  input.addEventListener("change", updatePrice);  
 });
 
 document.getElementById("discountCode").addEventListener("input", updatePrice);
 
-// Función para aplicar el descuento basado en el código ingresado
+
 function getDiscountedPrice(price, discountCode) {
   const condo = condominios.find(c => c.discountCode === discountCode);
   if (condo) {
-    // Si se encuentra un código de descuento, se aplica el descuento
+  
     return price * (1 - condo.discountPercentage / 100);
   }
-  return price; // Si no hay descuento, devolver el precio original
+  return price; 
 }
 
-// Show SweetAlert error
+
 function showError(title, html) {
   Swal.fire({ icon: "error", title, html });
 }
 
-// Return list of missing fields
+
 function getMissingFields() {
   const fields = [
     { id: "fullName", name: "Nombre" },
@@ -89,38 +89,36 @@ function getMissingFields() {
   return missing;
 }
 
-// Email format validation
+
 function isEmailValid(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Card number validation (exactly 16 digits)
+
 function isCardValid(num) {
   return num.replace(/\D/g, "").length === 16;
 }
 
-// Check if card is expired (returns true if expired)
+
 function isExpired(year, month) {
   const now = new Date();
   const exp = new Date(year, month - 1);
   return exp < new Date(now.getFullYear(), now.getMonth());
 }
 
-// Gather all form values into an object for EmailJS
 function collectParams() {
   const form = document.getElementById("serviceForm");
   const rawCard = form.cardNumber.value;
-  const discountCode = form.discountCode.value;  // Obtener el código de descuento
+  const discountCode = form.discountCode.value;  
   let price = 0;
 
-  // Obtener el plan seleccionado y su precio
+ 
   const selectedPlan = document.querySelector('input[name="plan"]:checked');
   if (selectedPlan) {
     const plan = plans.find(p => p.name === selectedPlan.value);
     price = plan.price;
   }
 
-  // Aplicar el descuento si el código es válido
   price = getDiscountedPrice(price, discountCode);
 
   return {
@@ -134,13 +132,13 @@ function collectParams() {
     plan: selectedPlan ? selectedPlan.value : '',
     serviceDate: form.serviceDate.value,
     serviceTime: document.querySelector('input[name="serviceTime"]:checked').value,
-    province: form.province.value,      // New
+    province: form.province.value,     
     address: form.address.value,  
-    price: price  // Incluir el precio calculado
+    price: price  
   };
 }
 
-// Populate and show the confirmation modal
+
 function showConfirmation(params) {
   const body = document.getElementById("confirmBody");
   body.innerHTML = `
@@ -156,15 +154,14 @@ function showConfirmation(params) {
   new bootstrap.Modal(document.getElementById("confirmModal")).show();
 }
 
-// Send the email via EmailJS
+
 function sendEmail(params) {
   return emailjs.send("service_blppxsc", "template_d9ghdqa", params, "HKiIThGpeT7T6eLPK");
 }
 
-// Store the parameters between steps
+
 let currentParams = null;
 
-// 1) Validate & open modal when clicking "Agendar servicio"
 document.getElementById("openModalBtn").addEventListener("click", () => {
   const missing = getMissingFields();
   if (missing.length) {
@@ -188,7 +185,6 @@ document.getElementById("openModalBtn").addEventListener("click", () => {
     return;
   }
 
-  // All validations passed → collect params and show modal
   currentParams = collectParams();
   showConfirmation(currentParams);
 });
@@ -196,34 +192,27 @@ document.getElementById("openModalBtn").addEventListener("click", () => {
 function clearForm() {
   const form = document.getElementById("serviceForm");
 
-  // Limpiar todos los campos de texto
   form.reset();
 
-  // Limpiar el campo de precio (si es necesario)
   const priceElement = document.getElementById("planPrice");
-  priceElement.textContent = "Precio: $0.00"; // O cualquier texto por defecto
+  priceElement.textContent = "Precio: $0.00"; 
 
-  // Limpiar cualquier campo seleccionado en los radios
   const radios = form.querySelectorAll('input[type="radio"]');
   radios.forEach(radio => radio.checked = false);
 
-  // Limpiar el campo de código de descuento
+  
   const discountCodeField = document.getElementById("discountCode");
   discountCodeField.value = "";
 
-  // Limpiar cualquier campo seleccionado en los selects (si los hay)
+
   const selects = form.querySelectorAll('select');
-  selects.forEach(select => select.selectedIndex = 0);  // O cualquier valor predeterminado
-  // Reset province dropdown
+  selects.forEach(select => select.selectedIndex = 0);  
   document.getElementById("province").selectedIndex = 0;
-  // Clear address input
   document.getElementById("address").value = "";
-  // Limpiar cualquier otro campo si es necesario
   const checkboxes = form.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => checkbox.checked = false);
 }
 
-// 2) Send form when clicking "Confirmar" in the modal
 document.getElementById("confirmSubmitBtn").addEventListener("click", async () => {
   const modalEl = document.getElementById("confirmModal");
   const bsModal = bootstrap.Modal.getInstance(modalEl);
